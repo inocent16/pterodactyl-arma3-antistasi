@@ -21,7 +21,7 @@ Antistasi Ultimate's own documentation says to untick **Use New Save Method** fo
 ## Installation outline
 
 1. Import `egg/egg-arma3-antistasi-ultimate.json` into Pterodactyl.
-2. Configure the dedicated Steam account credentials required by the upstream installer. Keep these credentials private; Steam authentication behavior must be tested with your account.
+2. Configure the dedicated Steam account credentials required by the upstream installer. Important: the upstream egg's variable metadata says Steam Guard must be disabled, and its runtime treats two-factor login errors as fatal. I have not independently verified whether current SteamCMD authentication still requires that. Do not use a personal Steam account or disable protection on one; test only with the dedicated account and reconsider this dependency if Steam Guard is enabled. The upstream egg also warns that credentials are stored in plain text by the Panel.
 3. Install the server and upload the HTML preset exported by Arma 3 Launcher to the server root as `modlist.html` (or set `MOD_FILE` to the uploaded filename).
 4. Ensure the Antistasi Ultimate Workshop item and every required client mod/map are in the preset.
 5. Set a strong admin password in `server.cfg` before exposing the server. The template intentionally leaves `passwordAdmin` commented.
